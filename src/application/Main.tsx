@@ -1,7 +1,9 @@
+import { Layouts } from "components";
+
 export function Main() {
   return (
-    <div>
+    <Layouts.Main>
       <h1>Hello world</h1>
-    </div>
+    </Layouts.Main>
   );
 }

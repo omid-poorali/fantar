@@ -1,0 +1,11 @@
+type PropsType = {
+    children: React.ReactNode;
+};
+
+export const Main = (props: PropsType) => {
+    return (
+        <main>
+            {props.children}
+        </main>
+    )
+}
