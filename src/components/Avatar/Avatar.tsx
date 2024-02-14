@@ -1,4 +1,3 @@
-import "./Avatar.scss";
 import React from "react";
 import DefaultImage from "assets/avatar.jpg";
 

@@ -29,3 +29,26 @@ body {
     font-family: IRANSans, Roboto;
     line-height: 1.6;
 }
+
+
+// components
+@import "../components/Avatar/Avatar.scss";
+@import "../components/DarkModeToggle/DarkModeToggle.scss";
+
+@import "../components/Divider/Divider.scss";
+@import "../components/Drawer/Nav.scss";
+@import "../components/Drawer/DesktopDrawer.scss";
+@import "../components/Drawer/MobileDrawer.scss";
+
+@import "../components/IconButton/IconButton.scss";
+
+@import "../components/TabMenu/TabMenu.scss";
+
+@import "../components/Header/UserMenu/UserMenu.scss";
+@import "../components/Header/Header.scss";
+
+//layouts
+@import "../components/layouts/Main.scss";
+
+// pages
+@import "../pages/Category.scss";

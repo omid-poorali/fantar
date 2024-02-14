@@ -1,5 +1,5 @@
-import "./Main.scss";
-import { Drawer, Header } from "components";
+import { useState } from "react";
+import { DesktopDrawer, Header } from "components";
 
 type PropsType = {
     children: React.ReactNode;
@@ -7,16 +7,24 @@ type PropsType = {
 
 const classes = {
     root: "MainLayout",
-    drawer: "MainLayout-drawer",
-    container: "MainLayout-container"
+    desktopDrawer: "MainLayout-desktopDrawer",
+    mobileDrawer: "MainLayout-mobileDrawer",
+    wrapper: "MainLayout-wrapper"
 }
 
 export const Main = (props: PropsType) => {
+    const [expanded, setExpand] = useState(false);
+
+    const changeExpand = () => setExpand(currentState => !currentState);
+
     return (
         <div className={classes.root}>
-            <Drawer className={classes.drawer} />
-            <div className={classes.container}>
-                <Header />
+            <DesktopDrawer
+                className={classes.desktopDrawer}
+                expanded={expanded}
+                onSettingsClick={changeExpand} />
+            <div className={classes.wrapper}>
+                <Header onSettingsClick={changeExpand}/>
                 {props.children}
             </div>
         </div>

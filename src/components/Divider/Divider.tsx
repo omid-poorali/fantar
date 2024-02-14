@@ -1,4 +1,3 @@
-import "./Divider.scss";
 import React from "react";
 
 import * as Utils from "utils";

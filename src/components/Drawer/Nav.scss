@@ -1,0 +1,72 @@
+.uiDrawerNav {
+    width: 100%;
+
+    &-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+
+    &-item {
+        width: 100%;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+
+        &:hover,
+        &[data-active=true] {
+            background-color: var(--text-color);
+            color: var(--background-color);
+        }
+    }
+
+    &-link {
+        color: inherit;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        cursor: pointer;
+    }
+
+    &-logo {
+        color: var(--text-color);
+        padding: 0.5rem;
+        width: 100%;
+        background: none;
+        border: none;
+        outline: none;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        cursor: pointer;
+
+        margin-bottom: 1rem;
+
+        strong {
+            font-weight: bold;
+        }
+    }
+
+
+    &-title {
+        margin: 0;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2.5rem;
+
+        [dir=rtl] & {
+            right: 2.5rem;
+        }   
+        
+        font-weight: 500;
+        transition: 0.2s opacity;
+
+        &--show {
+            opacity: 1;
+        }
+    }
+}

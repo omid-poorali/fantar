@@ -9,4 +9,27 @@
         justify-content: space-between;
         align-items: center;
     }
+
+    &-logo {
+        
+        display: flex;
+
+        @include md {
+            display: none;
+        }
+
+        color: var(--text-color);
+        padding: 0.5rem;
+        background: none;
+        border: none;
+        outline: none;
+
+        cursor: pointer;
+
+        strong {
+            margin: 0 0.5rem;
+            font-weight: bold;
+        }
+    }
+
 }

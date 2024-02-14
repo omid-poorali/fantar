@@ -1,4 +1,3 @@
-import "./TabMenu.scss";
 import React, { useMemo } from "react";
 import { useControlled } from "hooks";
 import * as Utils from "utils";

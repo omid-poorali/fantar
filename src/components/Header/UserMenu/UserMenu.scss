@@ -1,12 +1,18 @@
 .uiUserMenu {
     color: var(--text-color);
-    padding: 0.2rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem;
     display: flex;
+    flex-direction: row;
+    [dir=rtl] & {
+        flex-direction: row-reverse;
+    }  
     justify-content: center;
     align-items: center;
     background: none;
     border: none;
     border-radius: 0.5rem;
+    cursor: pointer;
 
     &:hover {
         background-color: var(--hover-background-color);

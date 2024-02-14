@@ -1,4 +1,3 @@
-import "./DarkModeToggle.scss";
 import React, { useLayoutEffect, useState } from "react";
 import { IconButton, LucidIcon } from "components";
 import { Enums } from "commons";

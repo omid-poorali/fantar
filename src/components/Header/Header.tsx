@@ -1,17 +1,24 @@
-import "./Header.scss";
 import React from "react";
 import { UserMenu } from "./UserMenu";
-import { DarkModeToggle } from "components";
+import { DarkModeToggle, LucidIcon } from "components";
 
 import { LanSwitch } from "./LanSwitch";
 
 import * as Utils from "utils";
 
-type PropsType = React.ComponentPropsWithoutRef<"header">
+type CustomProps = {
+    onSettingsClick: () => void;
+}
+
+type PropsType = CustomProps & React.ComponentPropsWithoutRef<"header">
 
 export const Header = (props: PropsType) => {
 
-    const { className, ...rest } = props;
+    const {
+        className,
+        onSettingsClick,
+        ...rest
+    } = props;
 
     const classes = {
         root: Utils.Styles.clsx("uiHeader", className),
@@ -21,7 +28,15 @@ export const Header = (props: PropsType) => {
 
     return (
         <header className={classes.root} {...rest}>
-            <div style={{ opacity: 0 }} className={classes.part}>SearchField</div>
+            <button
+                className={classes.logo}
+                onClick={onSettingsClick}>
+                <LucidIcon
+                    size={24}
+                    iconName="LuSettings"
+                ></LucidIcon>
+                <strong>Fantar</strong>
+            </button>
 
             <LanSwitch className={classes.part} />
 

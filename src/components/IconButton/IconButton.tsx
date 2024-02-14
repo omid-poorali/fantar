@@ -1,4 +1,3 @@
-import "./IconButton.scss";
 import React from "react";
 import * as Utils from "utils";
 

@@ -1,4 +1,5 @@
-import "./UserMenu.scss";
+
+import { useTranslation } from "react-i18next";
 import { Avatar } from "components";
 
 const classes = {
@@ -9,10 +10,12 @@ const classes = {
 
 export default function UserMenu() {
 
+    const { t } = useTranslation();
+
     return (
         <button className={classes.root}>
-            <Avatar className={classes.avatar}/>
-            <span className={classes.title}>Omid Poorali</span>
+            <Avatar className={classes.avatar} />
+            <span className={classes.title}>{t("name")}</span>
         </button>
     );
 }
