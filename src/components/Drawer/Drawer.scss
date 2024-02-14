@@ -3,12 +3,20 @@
     background-color: var(--element-color);
     border-radius: 1rem 0 0 1rem;
 
+    [dir=rtl] & {
+        border-radius: 0 1rem 1rem 0;
+    }    
+
     width: 4.2rem;
     min-height: 100vh;
 
     scrollbar-width: none;
     overflow-y: scroll;
     border-right: 1px solid var(--divider-color);
+
+    [dir=rtl] & {
+        border-left: 1px solid var(--divider-color);
+    }    
 
     display: flex;
     flex-direction: column;

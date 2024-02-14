@@ -31,23 +31,19 @@ export const LanSwitch = (props: PropsType) => {
         }
     ]);
 
-    const [lan, setLan] = useState<LanguageItem>();
+    const [lan, setLan] = useState<string>(localStorage.getItem("lan") ?? "en");
 
     useLayoutEffect(() => {
-        const maybeLan = () => {
-            const lanLocalStorage = localStorage.getItem("lan")
-            return lanLocalStorage === "fa" ? lanItems.current[1]: lanItems.current[0]
-        }
-        const currentLan = lan ?? maybeLan();
+        const currentLan = lan === "fa" ? lanItems.current[1] : lanItems.current[0];
+        i18n.changeLanguage(currentLan.value);
         document.documentElement.setAttribute("lang", currentLan.value);
         document.documentElement.setAttribute("dir", currentLan?.dir ?? "ltr");
         localStorage.setItem("lan", currentLan.value);
-        i18n.changeLanguage(currentLan.value);
 
     }, [lan])
 
     const handleLanChange = (selectedItem: LanguageItem) => {
-        setLan(() => selectedItem);
+        setLan(() => selectedItem.value);
     };
 
     return (
