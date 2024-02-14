@@ -23,12 +23,9 @@
   --text-color: #fff;
   --element-color: #000;
   --background-color: #000;
-  
   --hover-background-color: rgba(255, 255, 255, 0.1);
+  --active-tab-background-color: #000;
   --divider-color: rgba(255, 255, 255, 0.2);
-
-  --label-color: var(--primary-200);
-  --outline-color: var(--primary-200);
 }
 
 /*
@@ -38,10 +35,7 @@
   --text-color: #000;
   --element-color: #fff;
   --background-color: #fff;
-
   --hover-background-color: rgba(0, 0, 0, 0.1);
+  --active-tab-background-color: #fff;
   --divider-color: rgba(0, 0, 0, 0.2);
-
-  --label-color: var(--primary-800);
-  --outline-color: var(--primary-800);
 }

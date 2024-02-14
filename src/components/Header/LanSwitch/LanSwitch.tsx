@@ -47,7 +47,7 @@ export const LanSwitch = (props: PropsType) => {
     };
 
     return (
-        <div className={className}>
+        <div dir="ltr" className={className}>
             <TabMenu
                 value={lan ?? "en"}
                 options={lanItems.current}
