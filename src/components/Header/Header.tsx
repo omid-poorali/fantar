@@ -1,30 +1,30 @@
+import "./Header.scss";
 import React from "react";
 import { UserMenu } from "./UserMenu";
 import { DarkModeToggle } from "components";
+import { LanSwitch } from "./LanSwitch";
+
 import * as Utils from "utils";
 
-import "./Header.scss";
-
-
-type PropsType = React.ComponentPropsWithoutRef<"div">
+type PropsType = React.ComponentPropsWithoutRef<"header">
 
 export const Header = (props: PropsType) => {
 
-    const { className } = props;
+    const { className, ...rest } = props;
 
     const classes = {
         root: Utils.Styles.clsx("uiHeader", className),
         logo: "uiHeader-logo",
-        side: "uiHeader-side"
+        part: "uiHeader-part"
     };
 
     return (
-        <header className={classes.root}>
-            <div className={classes.side}>
+        <header className={classes.root} {...rest}>
+            <div style={{ opacity: 0 }} className={classes.part}>SearchField</div>
 
-            </div>
+            <LanSwitch className={classes.part} />
 
-            <div className={classes.side}>
+            <div className={classes.part}>
                 <DarkModeToggle />
                 <UserMenu />
             </div>

@@ -1,0 +1,27 @@
+.uiTabMenu {
+
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+
+
+    &-button {
+        color: var(--disable-text-color);
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0.5rem 0.7rem;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &:hover {
+            background-color: var(--hover-background-color);
+        }
+
+        &[data-active=true] {
+            font-weight: 600;
+            color: var(--active-text-color);
+        }
+    }
+
+}
