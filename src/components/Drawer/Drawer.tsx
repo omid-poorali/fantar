@@ -1,8 +1,9 @@
 import "./Drawer.scss";
-import { useState } from "react";
+import React, { useState } from "react";
 import { LucidIcon, Icon } from "../LucidIcon";
-import * as Utils from "utils";
 import { Divider } from "components/Divider";
+
+import * as Utils from "utils";
 
 const menuItems: { name: string; iconName: Icon }[] = [
   {
@@ -34,19 +35,7 @@ export const Drawer = (props: PropsType) => {
   } = props;
 
 
-  const [active, setActive] = useState(1);
-  // const [animate, setAnimate] = useState(false);
   const [expanded, setExpanded] = useState(true);
-
-  // let delay = 1;
-  // useEffect(() => {
-  //   setAnimate(true);
-  //   let timer = setTimeout(() => setAnimate(false), delay * 1000);
-
-  //   return () => {
-  //     clearTimeout(timer);
-  //   };
-  // }, [active, delay]);
 
   const classes = {
     root: Utils.Styles.clsx("uiDrawer", expanded && "uiDrawer--expanded", className),
@@ -54,14 +43,15 @@ export const Drawer = (props: PropsType) => {
     logo: "uiDrawer-logo",
     nav: "uiDrawer-nav",
     list: "uiDrawer-list",
-    item: "uiDrawer-item"
+    item: "uiDrawer-item",
+    link: "uiDrawer-link"
   }
 
   return (
     <section className={classes.root}>
 
-      <div
-        className={Utils.Styles.clsx(classes.logo,classes.item)}
+      <button
+        className={classes.logo}
         onClick={() => setExpanded(currentValue => !currentValue)}>
         <LucidIcon
           size={24}
@@ -71,36 +61,34 @@ export const Drawer = (props: PropsType) => {
           className={classes.title}>
           Fantar
         </strong>
-      </div>
+      </button>
 
       <nav className={classes.nav}>
         <ul className={classes.list}>
-          {menuItems.map((item, index) => {
-
+          {React.Children.toArray(menuItems.map((item, index) => {
             return (
               <li
-                key={index}
-                data-active={active === index}
-                className={classes.item}
-                onClick={() => setActive(index)}
-              >
-                <LucidIcon
-                  size={24}
-                  iconName={item.iconName}
-                ></LucidIcon>
-                <p
-                  className={classes.title}>
-                  {item.name}
-                </p>
+                data-active={index === 1}
+                className={classes.item}>
+                <a
+                  href="/"
+                  className={classes.link}
+                  onClick={e => e.preventDefault()}>
+                  <LucidIcon
+                    size={24}
+                    iconName={item.iconName}
+                  ></LucidIcon>
+                  <p
+                    className={classes.title}>
+                    {item.name}
+                  </p>
+                </a>
               </li>
             );
-          })}
+          }))}
         </ul>
       </nav>
-
       <Divider />
-
-
     </section>
   );
 };

@@ -1,5 +1,5 @@
 import "./Main.scss";
-import { Drawer } from "components";
+import { Drawer, Header } from "components";
 
 type PropsType = {
     children: React.ReactNode;
@@ -16,6 +16,7 @@ export const Main = (props: PropsType) => {
         <div className={classes.root}>
             <Drawer className={classes.drawer} />
             <div className={classes.container}>
+                <Header />
                 {props.children}
             </div>
         </div>
