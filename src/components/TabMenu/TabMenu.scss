@@ -1,5 +1,7 @@
 .uiTabMenu {
 
+    border-radius: 0.5rem;
+    background-color: var(--hover-background-color);
     display: flex;
     flex-direction: row;
     gap: 0.2rem;
