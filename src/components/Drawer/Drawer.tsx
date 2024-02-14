@@ -1,28 +1,12 @@
 import "./Drawer.scss";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { LucidIcon, Icon } from "../LucidIcon";
 import { Divider } from "components/Divider";
 
 import * as Utils from "utils";
+import { useTranslation } from "react-i18next";
 
-const menuItems: { name: string; iconName: Icon }[] = [
-  {
-    name: "Explore New",
-    iconName: "LuHome"
-  },
-  {
-    name: "Category",
-    iconName: "LuList"
-  },
-  {
-    name: "Popular Product",
-    iconName: "LuTrendingUp"
-  },
-  {
-    name: "Living and Gifts",
-    iconName: "LuGift"
-  }
-];
+type NavItems = { name: string; iconName: Icon }[];
 
 type PropsType = {
   className?: string;
@@ -34,6 +18,26 @@ export const Drawer = (props: PropsType) => {
     className
   } = props;
 
+  const { t } = useTranslation();
+
+  const getNavItems = useCallback((): NavItems => ([
+    {
+      name: t("explore-new"),
+      iconName: "LuHome"
+    },
+    {
+      name: t("category"),
+      iconName: "LuList"
+    },
+    {
+      name: t("popular-product"),
+      iconName: "LuTrendingUp"
+    },
+    {
+      name: t("living-gifts"),
+      iconName: "LuGift"
+    }
+  ]), [t]);
 
   const [expanded, setExpanded] = useState(true);
 
@@ -65,7 +69,7 @@ export const Drawer = (props: PropsType) => {
 
       <nav className={classes.nav}>
         <ul className={classes.list}>
-          {React.Children.toArray(menuItems.map((item, index) => {
+          {React.Children.toArray(getNavItems().map((item, index) => {
             return (
               <li
                 data-active={index === 1}

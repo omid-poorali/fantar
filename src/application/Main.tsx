@@ -1,3 +1,4 @@
+import './i18n';
 import { Layouts } from "components";
 import Category from "pages/Category";
 
