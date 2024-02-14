@@ -1,0 +1,12 @@
+.MainLayout {
+    display: flex;
+    flex-direction: row;
+
+    &-drawer {
+        flex-shrink: 0;
+    }
+    
+    &-container {
+        flex-grow: 1;
+    }
+}
