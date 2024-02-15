@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { DesktopDrawer, Header } from "components";
+import { DesktopDrawer, Header, MobileDrawer } from "components";
 
 type PropsType = {
     children: React.ReactNode;
@@ -23,8 +23,12 @@ export const Main = (props: PropsType) => {
                 className={classes.desktopDrawer}
                 expanded={expanded}
                 onSettingsClick={changeExpand} />
+            <MobileDrawer
+                className={classes.mobileDrawer}
+                open={expanded}
+                onClose={changeExpand} />
             <div className={classes.wrapper}>
-                <Header onSettingsClick={changeExpand}/>
+                <Header onSettingsClick={changeExpand} />
                 {props.children}
             </div>
         </div>

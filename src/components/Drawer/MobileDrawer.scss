@@ -1,28 +1,86 @@
 .uiMobileDrawer {
-    padding: 1rem;
-    background-color: var(--element-color);
-    border-radius: 1rem 0 0 1rem;
 
-    [dir=rtl] & {
-        border-radius: 0 1rem 1rem 0;
-    }    
+    &-main {
+        height: 100%;
+        position: absolute;
+        z-index: 1000;
+        box-shadow: 1rem 0 1rem rgba(var(--element-color), .15);
+        top: 0;
+        left: 0;
 
-    width: 15rem;
-    min-height: 100vh;
+        [dir=rtl] & {
+            left: auto;
+            right: 0;
+        }    
+        
+        opacity: 0;
+        width: 0;
 
-    scrollbar-width: none;
-    overflow-y: scroll;
-    border-right: 1px solid var(--divider-color);
+        transform: translateX(calc(var(--drawer-width) * -1));
 
-    [dir=rtl] & {
-        border-left: 1px solid var(--divider-color);
-    }    
+        [dir=rtl] & {
+            transform: translateX(var(--drawer-width));
+        }    
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: 0.3s width;
+        transition: all .5s ease-in-out;
 
+        &--open {
+            opacity: 1;
+            transform: translateX(0);
+            [dir=rtl] & {
+                transform: translateX(0);
+            }   
+            width: var(--drawer-width);
+        }
+    }
+
+
+    &-overlay {
+        z-index: -1;
+        width: 0;
+        height: 0;
+        background-color: rgba(#000, .2);
+
+        &--open {
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    }
+
+
+    &-section {
+
+        padding: 1rem;
+        background-color: var(--element-color);
+        border-radius: 1rem 0 0 1rem;
+
+        [dir=rtl] & {
+            border-radius: 0 1rem 1rem 0;
+        }
+
+        width: 15rem;
+        min-height: 100vh;
+
+        scrollbar-width: none;
+        overflow-y: scroll;
+        border-right: 1px solid var(--divider-color);
+
+        [dir=rtl] & {
+            border-left: 1px solid var(--divider-color);
+        }
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: 0.3s width;
+
+    }
 
     &-logo {
         color: var(--text-color);
@@ -53,9 +111,10 @@
 
         [dir=rtl] & {
             right: 2.5rem;
-        }   
-        
+        }
+
         font-weight: 500;
         transition: 0.2s opacity;
     }
+
 }

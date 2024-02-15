@@ -24,7 +24,7 @@
     transition: 0.3s width;
 
     &--expanded {
-        width: 15rem;
+        width: var(--drawer-width);
         align-items: flex-start;
     }
 
