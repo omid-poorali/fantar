@@ -1,12 +1,13 @@
 .uiUserMenu {
     color: var(--text-color);
-    margin: 0 0.5rem;
     padding: 0.5rem;
     display: flex;
     flex-direction: row;
+
     [dir=rtl] & {
         flex-direction: row-reverse;
-    }  
+    }
+
     justify-content: center;
     align-items: center;
     background: none;
@@ -19,11 +20,19 @@
     }
 
     &-avatar {
-        margin: 0.5rem;
+        margin: 0;
+        @include md {
+            margin: 0.5rem;
+        }
     }
 
     &-title {
         font-weight: 500;
+        display: none;
+
+        @include md {
+            display: inline-block;
+        }
     }
 
 }
