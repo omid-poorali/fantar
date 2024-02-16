@@ -22,8 +22,12 @@
 
 
 body {
+    margin: auto;
+    max-width: var(--max-width);
+
     background-color: var(--background-color);
     color: var(--text-color);
+
     font-family: IRANSans, Roboto;
     line-height: 1.6;
 }
