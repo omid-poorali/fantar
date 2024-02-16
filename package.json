@@ -6,13 +6,25 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
+    "@types/jest": "^29.5.12",
     "@types/node": "^17.0.45",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
+    "@typescript-eslint/parser": "^7.0.1",
+    "cypress": "^13.6.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "husky": "^9.0.11",
+    "i18next": "^23.8.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^14.0.5",
+    "react-icons": "^5.0.1",
     "react-scripts": "5.0.1",
+    "sass": "^1.70.0",
+    "ts-jest": "^29.1.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "workbox-background-sync": "^6.6.0",
@@ -26,28 +38,34 @@
     "workbox-range-requests": "^6.6.0",
     "workbox-routing": "^6.6.0",
     "workbox-strategies": "^6.6.0",
-    "workbox-streams": "^6.6.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.1",
-    "@typescript-eslint/parser": "^7.0.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "i18next": "^23.8.2",
-    "react-i18next": "^14.0.5",
-    "react-icons": "^5.0.1",
-    "sass": "^1.70.0"
+    "workbox-streams": "^6.6.0"
   },
   "scripts": {
+    "tsc:check": "npm run tsc:check-app && npm run tsc:check-cypress",
+    "tsc:check-app": "tsc --noEmit --project ./tsconfig.json",
+    "tsc:check-cypress": "tsc --noEmit --project ./cypress/tsconfig.json",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src/**/*.{js,ts,tsx} --quiet",
+    "lint:fix": "eslint src/**/*.{js,ts,tsx} --fix",
+    "test:jest": "jest",
+    "test:cypress": "cypress run --config-file ./cypress/config.ts",
+    "test:cypress:open": "cypress open --config-file ./cypress/config.ts",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omid-poorali/fantar.git"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint --fix"
     ]
   },
   "browserslist": {

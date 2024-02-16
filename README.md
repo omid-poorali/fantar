@@ -1,24 +1,174 @@
-## Available Scripts
 
-In the project directory, you can run:
+  
 
-### `npm start`
+# React | Typescript | Jest | Cypress - Fantar
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  
 
-### `npm test`
+Fantar (Ecommerce website)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  
 
-### `npm run build`
+  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [Instalation steps](#instalation-steps)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  
+
+- [Available scripts](#available-scripts)
+
+  
+
+- [Technology stack](#technology-stack)
+
+  
+
+- [Useful information](#useful-information)
+
+  
+
+  
+
+<a  name="instalation"  />
+
+  
+
+  
+
+### Instalation steps
+
+  
+
+  
+
+1. Clone this repository to destination folder.
+
+  
+
+  
+
+`git clone https://github.com/omid-poorali/fantar.git`
+
+  
+
+  
+
+2. Install dependencies.
+
+  
+
+  
+
+`npm install`
+
+  
+
+  
+
+3. Run local environment.
+
+  
+
+  
+
+`npm start`
+
+  
+
+  
+
+<a  name="scripts"  />
+
+  
+
+  
+
+### Available scripts
+
+  
+  
+
+`npm start` - run development server with hot reload mode,
+
+  
+  
+
+`npm build` - build distributon package,
+
+  
+  
+
+`npm run lint` - run lints,
+
+  
+  
+
+`npm run test:jest` - run Jest tests,
+
+  
+
+`npm run test:cypress` - run Cypress tests in terminal,
+
+  
+
+  
+
+`npm run test:cypress:open` - open Cypress application.
+
+  
+
+  
+
+<a  name="technology"  />
+
+  
+
+  
+
+### Technology stack
+
+  
+
+| | Name | Version | Docs |
+
+|-------|-----------------|-------------|------|
+
+| <img src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg" width='30'> | Typescript | 4.9.5 | <https://www.typescriptlang.org/>
+
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width='30'> | React | 18.2.0 | <https://reactjs.org/>|
+
+| <img src="https://iconape.com/wp-content/png_logo_vector/jest-logo.png" width='30'> | Jest | 29.4.1 | <https://jestjs.io/>
+
+| <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Cypress.png" width='30'> | Cypress | 12.7.0 | <https://www.cypress.io/>
+
+| <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png" width='30'> | Sass | 1.58.3 | <https://sass-lang.com/>|
+
+| <img src="https://cdn.worldvectorlogo.com/logos/eslint.svg" width='30'> | ESLint | 8.35.0 | <https://eslint.org/>
+
+
+
+| <img src="https://media.istockphoto.com/vectors/cute-brown-siberian-husky-dog-sitting-cartoon-icon-vector-vector-id1238710824?k=20&m=1238710824&s=170667a&w=0&h=m4N_3us1MDDnMa-mWIGxyrYvgd9FRq0A67ziTCy7ZZw=" width='30'> | Husky | 8.0.3 | <https://github.com/typicode/husky>
+
+  
+
+  
+
+<a  name="information"  />
+
+  
+
+  
+
+### Useful information
+
+  
+
+  
+
+Before You commit or push something on repository, Husky will run code lints and tests.
+
+  
+
+The configuration files are in the main project folder.
